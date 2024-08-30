@@ -49,7 +49,7 @@ function utf16.encode(str: string)
     local str16 = from16(utf8.codepoint(str));
     local result = '';
 
-    if tonumber(str16, 16) <= tonumber('0xFFFF', 16) then 
+    if tonumber(str16, 16) <= 0xFFFF then 
         result = str16;
         for i=1, 4 - #str16 do
             result = `0{result}`;
