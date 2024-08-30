@@ -8,5 +8,7 @@
 /README.md.swp
 /.LICENCE.md.un~
 /.LICENCE.md.swp
-/
+*.un~
+*.swp
+*.gitignore~
 
