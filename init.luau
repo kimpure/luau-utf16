@@ -15,7 +15,7 @@ function from16(num: number): string
     end
     for i=1, #tab do
         local value = tab[i];
-        result = `{if value > 9 then _16[value - 9] else value}{result}`
+        result = `{ if value > 9 then _16[value - 9] else value }{result}`
     end
     return result
 end
@@ -35,24 +35,31 @@ end
 
 export type UTF16Impl = {
     __index: UTF16Impl,
-    codepoint: (str: string | number) -> (number),
-    encode: (str: string | number) -> (string),
+    codepoint: (str: string) -> (number),
+    encode: (str: string) -> (string),
     decode: (str: string) -> (string),
+    char: (str: string) -> (string),
 }
 
-local utf16 = {}
+local utf16 = {} :: UTF16Impl
 utf16.__index = utf16
+
+function utf16.char(str)
+	-- 내일 기능 추가 예정
+	return '';
+end
 
 function utf16.codepoint(str)
     return utf8.codepoint(str);
 end
 
 function utf16.decode(str) 
-    return utf8.char(tonumber(str, 16));
+	return utf8.char(tonumber(str, 16) :: number);
 end
 
-function utf16.encode(str: string)
-    local str16 = from16(utf8.codepoint(str));
+function utf16.encode(str)
+    local codePoint = utf8.codepoint(str);
+    local str16 = from16(codePoint);
     local result = '';
 
     if tonumber(str16, 16) <= 0xFFFF then 
@@ -61,7 +68,7 @@ function utf16.encode(str: string)
             result = `0{result}`;
         end
     else
-        local str2 = from2(utf8.codepoint(str));
+        local str2 = from2(codePoint);
         for i=1, 20 - #str2 do
             str2 = `0{str2}`;
         end
