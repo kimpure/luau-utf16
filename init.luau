@@ -44,17 +44,12 @@ export type UTF16Impl = {
 local utf16 = {} :: UTF16Impl
 utf16.__index = utf16
 
-function utf16.char(str)
-	-- 내일 기능 추가 예정
-	return '';
-end
-
 function utf16.codepoint(str)
     return utf8.codepoint(str);
 end
 
 function utf16.decode(str) 
-	return utf8.char(tonumber(str, 16) :: number);
+    return utf8.char(tonumber(str, 16) :: number);
 end
 
 function utf16.encode(str)
