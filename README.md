@@ -2,6 +2,11 @@
 
 luau-utf16 is a library for using utf16 in luau.
 
+## Install
+```
+git submodule add https://github.com/kimpure/luau-utf16 lune-utf16
+```
+
 
 ## how to use
 

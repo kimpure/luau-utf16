@@ -74,6 +74,3 @@ function utf16.encode(str)
 end
 
 return utf16
-
-
-
