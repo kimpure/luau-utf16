@@ -38,7 +38,6 @@ export type UTF16Impl = {
     codepoint: (str: string) -> (number),
     encode: (str: string) -> (string),
     decode: (str: string) -> (string),
-    char: (str: string) -> (string),
 }
 
 local utf16 = {} :: UTF16Impl

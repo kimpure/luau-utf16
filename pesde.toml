@@ -1,9 +1,10 @@
 name = "kimpure/utf16"
-version = "0.1.0"
+version = "0.1.2"
 description = "luau-utf16 is a library for using utf16 in luau."
 authors = ["sunwoo"]
 repository = "https://github.com/kimpure/luau-utf16"
 license = "MIT"
+includes = ["README.md"]
 
 [target]
 environment = "luau"
