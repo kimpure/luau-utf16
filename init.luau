@@ -1,24 +1,8 @@
 --!strict
-
-local _16 = { 'A', 'B', 'C', 'D', 'E', 'F' };
-function from16(num: number): string
-    if num == 0 then return '0' end
-    local tab = {};
-    local result = '';
-    while true do
-        if num < 1 then
-            break
-        end
-        tab[#tab+1] = num % 16;
-        num -= num % 16
-        num /= 16;
-    end
-    for i=1, #tab do
-        local value = tab[i];
-        result = `{ if value > 9 then _16[value - 9] else value }{result}`
-    end
-    return result
+local function from16(decimal)
+    return string.format("%X", decimal)  -- 대문자 16진수
 end
+
 
 function from2(num: number): string
     if num == 0 then return '0' end
