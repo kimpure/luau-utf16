@@ -1,8 +1,14 @@
 --!strict
+
+--[=[
+TODO: 
+1. use bit
+2. build to lune & luau & roblox
+]=]
+
 local function from16(decimal)
     return string.format("%X", decimal)
 end
-
 
 function from2(num: number): string
     if num == 0 then return '0' end
