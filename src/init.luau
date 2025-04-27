@@ -4,6 +4,7 @@
 TODO: 
 1. use bit
 2. build to lune & luau & roblox
+3. pesde publish
 ]=]
 
 local function from16(decimal)
