@@ -9,11 +9,6 @@ pesde
 pesde add kimpure/utf16
 ```
 
-submodule
-```
-git submodule add https://github.com/kimpure/luau-utf16 lune-utf16
-```
-
 
 ## how to use
 

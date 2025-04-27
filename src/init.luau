@@ -1,6 +1,6 @@
 --!strict
 local function from16(decimal)
-    return string.format("%X", decimal)  -- 대문자 16진수
+    return string.format("%X", decimal)
 end
 
 
